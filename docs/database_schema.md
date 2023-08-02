@@ -20,6 +20,7 @@ Throughout the document, for each category of blasters, there is a table of blas
 That's already a great starting point for a database schema.
 
 **Natural description of data**
+
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
 So the BlasterBrowser's database should contain blaster data as the main concern. Blasters have a variety of attributes inherent to the design. 
