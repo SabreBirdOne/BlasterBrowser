@@ -60,12 +60,37 @@ First, I'd like to state how we can uniquely identify blasters in the database
 
 I made the choice of using an artificial ID in the database because names and designers of blasters may sometimes conflict... The way to ID blasters is extremely important because it is used to connect blaster attributes across the entire database.
 
-Next, here are some attributes related to the blaster's mechanism
-- A blaster's launch mech includes springer, flywheeler, HPA, string, or AEB (or more?).
-- A blaster can have one, or many action types to prime itself and launch darts.
-- If a blaster's launch mech is flywheel, then it has a type of flywheel used.
-- A blaster has a dart pushing mechanism.
-- A blaster have different ways to feed darts.
+Next, here are some things related to the blasters
+
+Blaster's launch mechanism:
+- A specific launch mechanism, in a specific blaster or as a standalone part, is uniquely identified by name
+- Each specific launch mechanism belongs to a type: springer, flywheeler, HPA, string, AEB, etc.
+
+A blaster can have at least one, and many specific launch mechanisms. A specific launch mechanism may be placed in many blasters
+- For example: a stock Nexus pro can have a stock spring or upgraded spring. The Worker Swift spring can be placed in the Swift, or the Worker Harrier blasters
+
+Blaster's action mechanism:
+- A specific action mechanism, in a specific blaster or as a standalone part, is uniquely identified by name
+- Each specific action mechanism belongs to a type: pump, slide prime, regular bolt, straight pull bolt, etc.
+
+A blaster can have at least one, and many action mechanisms. A specific action mechanism may be placed in many blasters
+- For example: the XYL Unicorn can be pump action or slide prime action. A HPA core can be placed in HPA-minded blasters, or someone in the Hobby can mod a Nexus pro to use HPA cores (?)
+
+Blaster's flywheels:
+- A specific flywheel model, in a specific blaster or as a standalone part, is uniquely identified by name
+- Each specific flywheel belongs to a type: brushed, brushless, etc.
+
+A blaster can have zero, one, or many specific flywheel models. A specific flywheel model can be placed in many blasters.
+- For example: nexus pro has no flywheels (in case the hobby can do it, the database can cope with that), Kraken motors can be placed in Stryfe or OFD Quik (?) blasters.
+
+Blaster dart feed mech:
+- A specific dart feed mechanism, in a specific blaster or as a standalone part, is uniquely identified by name
+- Each specific dart feed mechanism belongs to a type: single shot, cyclinder fed, front-of-grip magazine fed, mag-in-grip, bullpup magazine fed, hopper-fed, etc.
+
+A Blaster can have at least one, to many dart feed mechanism. A specific dart feed mechanism may be placed in many blasters.
+- For example: the Matrixfire can be hopper-fed (stock form) or front-of-grip magazine fed (via a mod). Or a specific talon magazine adapter can be placed in many blasters.
+
+Blaster rates of fire:
 - A blaster can have a minimum and maximum cyclic rates of fire (-1 being manual)
 - A blaster can have a minimum and maximum effective rates of fire (if manual, we can vote on it)
 
