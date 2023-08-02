@@ -52,13 +52,15 @@ So the BlasterBrowser's database should contain blaster data as the main concern
 - A blaster usually has only one name. But many blasters can also share a name (The Longshot confusion)...
   + If a blaster is derived from another, I think we should treat it as a standalone blaster. 
  
-- A blaster's launch mechanism includes springer, flywheeler, HPA, string, or AEB (or more?).
+- A blaster's launch mech includes springer, flywheeler, HPA, string, or AEB (or more?).
+
 - A blaster build can be 3D printed or injection molded, or both, but let's say we decide the build based on which material takes up the majority of the blaster.
 - A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
-- A blaster can be magazine fed or not. For blasters that can operate regardless of being magazine fed, we decide that it is magazine fed.
-- A blaster can be fed via mag-in-grip or not.
 - A blaster can be a true pistol or not.
-- Finally, for contigency and more information, every blaster has a minimal description.
+
+- A blaster have different ways to feed darts.
+
+- Finally, for contigency and more information, every blaster has an extra description.
 
 The hobby have many shops:
 - Each shop has a name that uniquely identifies it.
