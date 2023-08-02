@@ -1,6 +1,6 @@
 # BlasterBrowser
 
-** PROJECT SUMMARY **
+**PROJECT SUMMARY**
 This is the BlasterBrowser repository and project. The project's goals are to create and maintain a browser of hobby-grade foam blasters. It includes a database system to store data, and a user-friendly interface for the end user. 
 
 **PROJECT MOTIVATION**
