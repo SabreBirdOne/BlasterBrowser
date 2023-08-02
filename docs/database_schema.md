@@ -109,7 +109,7 @@ A blaster can be designed by many designers, while a designer can design many bl
 
 Diagrams are drawn and viewed on this website: https://app.diagrams.net/
 
-See ER_Diagram.png and ER_Diagram.drawio
+ ![ERD](https://github.com/SabreBirdOne/BlasterBrowser/blob/main/docs/ERD.drawio.png)
 
 
 # Schema
