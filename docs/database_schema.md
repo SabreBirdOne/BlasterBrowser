@@ -105,6 +105,11 @@ A blaster listing can have many different blasters (I don't know, maybe a deal?)
 
 A blaster can be designed by many designers, while a designer can design many blasters.
 
+**Entity-Relationship Diagram**
+Diagrams are drawn and viewed on this website: https://app.diagrams.net/
 
+
+
+**Schema**
 
 
