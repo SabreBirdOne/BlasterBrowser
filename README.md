@@ -23,5 +23,10 @@ If there are any bugs or issues encountered, you can open a GitHub issue or cont
 
 The contributors of BlasterBrowsers on GitHub
 
-Special thanks to Redditor u/TheJettisoned for the Hobby Blaster Catalogue:
+Special thanks:
+
+Redditor u/TheJettisoned for the Hobby Blaster Catalogue:
 https://docs.google.com/document/d/11Hw1tJ7mDTvTfsuYxSW-Jt3kofQ2ssyZX8zoZuN_os8/edit#heading=h.s3sb7j7jz7q6
+
+Authors of Meaker Blaster Master List:
+https://docs.google.com/spreadsheets/d/1YHi-dMucY6FEKNMeTnOKDIbyf-veNf7oJuvx2uj0X1g/edit#gid=23575684
