@@ -52,33 +52,27 @@ A lot of the description below may sound very obvious to us as hobbyists. I'm wr
 
 The database records blaster designers data.
 - Each designer is uniquely identified by a name. A designer can be an individual or a group.
-
-The database records designer links.
+- Each designer has a link, and a description
 
 The database collects blaster data, the main concern. 
 - Every blaster should be identified by a unique ID in the database.
-- A blaster usually has only one name. But many blasters can also share a name (The Longshot confusion)...
-  + If a blaster is derived from another, I think we should treat it as a standalone blaster. 
-- Blaster ID is extremely important because it is used to connect blaster attributes across the entire database.
+- A blaster has a name. Not always unique (Longshot confusion) 
 
 The database collects data about many shops:
 - Each shop has a name that uniquely identifies it.
-- A link to the shop's main page also uniquely identifies it.
-- For the sake of simplicity, if we can buy blasters from an individual hobbyist or designer, we can also consider the person as a shop in the database
+- Each shop has a link, and a description
 
 The database collects data about blaster listings. 
-- Each listing can contain many blasters
-- Each listing has a price. If the price is variable from a listing, we can find a special number to indicate that.
-- Each listing has a link, which is unique in the database.
+- Each listing is uniquely identified by an ID
+- Each listing has a price. Listings with variable prices have a price of -1.
+- Each listing may have a link to the a webpage, and a description. 
+
 
 **Relationships**
 
-A designer can have 0 to many links. A desginer link must link to at least 1 designer.
-
 A blaster can be designed by 0 to many designers. A designer can design 0 to many blasters
 
-A shop can have have 0 to many listings. 
-A listing can only be from one shop (especially when the listing's link links back to a webpage of the shop)
+A shop can have have 0 to many listings. A listing can only be from one shop.
 
 A blaster listing can have 0 to many different blasters. A blaster can be in many listings.
 
