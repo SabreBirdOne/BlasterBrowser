@@ -47,18 +47,31 @@ This spreadsheet really helps me with organizing database columns for blasters.
 
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
-So the BlasterBrowser's database should contain blaster data as the main concern. Blasters have a variety of attributes inherent to the design. 
+The Hobby has a lot of designers involved, which is great. 
+- Each designer is uniquely identified by a name. A designer can be an individual or a group.
+- Each designer can be contacted via many links
+
+The BlasterBrowser's database should contain blaster data as the main concern. Blasters have a variety of attributes inherent to the design. 
+
+First, I'd like to state how we can uniquely identify blasters in the database
 - Every blaster should be identified by a unique ID in the database.
 - A blaster usually has only one name. But many blasters can also share a name (The Longshot confusion)...
   + If a blaster is derived from another, I think we should treat it as a standalone blaster. 
- 
+- A blaster can be designed by zero, one, or many designers
+I made the choice of using an artificial ID in the database because names and designers of blasters may sometimes conflict...
+
+Next, here are some attributes related to the blaster's internal workings
 - A blaster's launch mech includes springer, flywheeler, HPA, string, or AEB (or more?).
-
-- A blaster build can be 3D printed or injection molded, or both, but let's say we decide the build based on which material takes up the majority of the blaster.
-- A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
-- A blaster can be a true pistol or not.
-
 - A blaster have different ways to feed darts.
+- A blaster can use one, or many dart types.
+- A blaster can have one, or many action types to prime itself and launch darts.
+- If a blaster's launch mech is flywheel, then it has a type of flywheel used.
+- A blaster has a dart pushing mechanism.
+
+Here are some attributes to describe the blaster's overall build and form factor.
+- A blaster's shell material can usually be 3D printed or injection molded, or fully metal etc.
+  + If the shell material is mixed, the material that takes up the majority of the blaster is listed.
+- A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
 
 - Finally, for contigency and more information, every blaster has an extra description.
 
