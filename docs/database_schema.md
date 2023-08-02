@@ -42,7 +42,6 @@ This spreadsheet, at a glance, resembles a relational database, which is excelle
 
 This spreadsheet really helps me with organizing database columns for blasters.
 
-
 **Natural description of data**
 
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
@@ -61,25 +60,31 @@ First, I'd like to state how we can uniquely identify blasters in the database
 
 I made the choice of using an artificial ID in the database because names and designers of blasters may sometimes conflict...
 
-Next, here are some attributes related to the blaster's internal workings
+Next, here are some attributes related to the blaster's mechanism
 - A blaster's launch mech includes springer, flywheeler, HPA, string, or AEB (or more?).
-- A blaster have different ways to feed darts.
-- A blaster can use one, or many dart types.
 - A blaster can have one, or many action types to prime itself and launch darts.
 - If a blaster's launch mech is flywheel, then it has a type of flywheel used.
 - A blaster has a dart pushing mechanism.
+- A blaster have different ways to feed darts.
+
+Some attributes about the darts 
+- A blaster can use one, or many dart types.
 
 Here are some attributes to describe the blaster's overall build and form factor.
 - A blaster's shell material can usually be 3D printed or injection molded, or fully metal etc.
-  + If the shell material is mixed, the material that takes up the majority of the blaster is listed.
+  + If the shell material is mixed, the material that takes up the majority of the shell is listed.
+- A blaster's internals, specifically the material, are important considerations
+  + (for example: metal internals to withstand higher spring loads)
 - A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
+
+Blasters can have licensing information.
 
 Finally, for contigency and more information, every blaster has an extra description.
 
 The hobby have many shops:
 - Each shop has a name that uniquely identifies it.
-- A link to the shop in general also uniquely identifies it.
-- For the sake of simplicity, if we can buy blasters from an individual hobbyist, we can also consider the person as a shop in the database.
+- A link to the shop's main page also uniquely identifies it.
+- For the sake of simplicity, if we can buy blasters from an individual hobbyist or designer, we can also consider the person as a shop in the database
 
 The hobby has blaster listings. 
 - Each listing can contain many blasters
