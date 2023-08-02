@@ -58,6 +58,7 @@ First, I'd like to state how we can uniquely identify blasters in the database
 - A blaster usually has only one name. But many blasters can also share a name (The Longshot confusion)...
   + If a blaster is derived from another, I think we should treat it as a standalone blaster. 
 - A blaster can be designed by zero, one, or many designers
+
 I made the choice of using an artificial ID in the database because names and designers of blasters may sometimes conflict...
 
 Next, here are some attributes related to the blaster's internal workings
@@ -73,7 +74,7 @@ Here are some attributes to describe the blaster's overall build and form factor
   + If the shell material is mixed, the material that takes up the majority of the blaster is listed.
 - A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
 
-- Finally, for contigency and more information, every blaster has an extra description.
+Finally, for contigency and more information, every blaster has an extra description.
 
 The hobby have many shops:
 - Each shop has a name that uniquely identifies it.
@@ -89,6 +90,8 @@ A shop can have have many listings.
 A listing can only be from one shop (especially when the listing's link links back to a webpage of the shop)
 
 A blaster listing can have many different blasters (I don't know, maybe a deal?). Also, it is possible that the same blaster can be in many listings (very commonly so!)
+
+A blaster can be designed by many designers, while a designer can design many blasters.
 
 
 
