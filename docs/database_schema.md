@@ -4,6 +4,8 @@ This file serves as documentation on the design of the database. It includes a n
 
 Due to the project using PostgreSQL, which is a relational database, this file contains an Entity-Relationship Diagram and an abstract relational schema, which serves as a starting point in implementing the database.
 
+Note that ERD diagrams and natural description can be constantly under work.
+
 # Background 
 
 _First example_
@@ -71,7 +73,8 @@ A blaster can have at least one, and many specific launch mechanisms. A specific
 
 Blaster's action mechanism:
 - A specific action mechanism, in a specific blaster or as a standalone part, is uniquely identified by name
-- Each specific action mechanism belongs to a type: pump, slide prime, regular bolt, straight pull bolt, etc.
+- Each specific action mechanism belongs to a type: pump, slide prime, regular bolt, straight pull bolt, semi automatic, fully automatic etc.
+- A specific action mechanism can achieve a cyclic rate of fire and effective rate of fire.
 
 A blaster can have at least one, and many action mechanisms. A specific action mechanism may be placed in many blasters
 - For example: the XYL Unicorn can be pump action or slide prime action. A HPA core can be placed in HPA-minded blasters, or someone in the Hobby can mod a Nexus pro to use HPA cores (?)
@@ -89,10 +92,6 @@ Blaster dart feed mech:
 
 A Blaster can have at least one, to many dart feed mechanism. A specific dart feed mechanism may be placed in many blasters.
 - For example: the Matrixfire can be hopper-fed (stock form) or front-of-grip magazine fed (via a mod). Or a specific talon magazine adapter can be placed in many blasters.
-
-Blaster rates of fire:
-- A blaster can have a minimum and maximum cyclic rates of fire (-1 being manual)
-- A blaster can have a minimum and maximum effective rates of fire (if manual, we can vote on it)
 
 Some attributes about the darts 
 - A blaster can use one, or many dart types.
@@ -135,6 +134,8 @@ A blaster can be designed by many designers, while a designer can design many bl
 Diagrams are drawn and viewed on this website: https://app.diagrams.net/
 
  ![ERD](https://github.com/SabreBirdOne/BlasterBrowser/blob/main/docs/ERD.drawio.png)
+
+
 
 
 # Schema
