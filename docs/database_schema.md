@@ -73,8 +73,10 @@ Some attributes about the darts
 Here are some attributes to describe the blaster's overall build and form factor.
 - A blaster's shell material can usually be 3D printed or injection molded, or fully metal etc.
   + If the shell material is mixed, the material that takes up the majority of the shell is listed.
+
 - A blaster's internals, specifically the material, are important considerations
   + (for example: metal internals to withstand higher spring loads)
+
 - A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
 
 Blasters can have licensing information.
