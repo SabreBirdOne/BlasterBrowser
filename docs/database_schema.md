@@ -24,7 +24,10 @@ That's already a great starting point for a database schema.
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
 So the BlasterBrowser's database should contain blaster data as the main concern. Blasters have a variety of attributes inherent to the design. 
-- A blaster usually has only one name. If a blaster is derived from another, I think we should treat it as a standalone blaster. So we can use blaster name to uniquely identify it.
+- Every blaster should be identified by a unique ID in the database.
+- A blaster usually has only one name. But many blasters can also share a name (The Longshot confusion)...
+  + If a blaster is derived from another, I think we should treat it as a standalone blaster. 
+ 
 - A blaster's launch mechanism includes springer, flywheeler, HPA, string, or AEB (or more?).
 - A blaster build can be 3D printed or injection molded, or both, but let's say we decide the build based on which material takes up the majority of the blaster.
 - A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
