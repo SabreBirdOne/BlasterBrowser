@@ -19,6 +19,7 @@ Throughout the document, for each category of blasters, there is a table of blas
 That's already a great starting point for a database schema.
 
 **Natural description of data**
+
 So the BlasterBrowser's database should contain blaster data as the main concern. Blasters have a variety of attributes inherent to the design. 
 
 A blaster usually has only one name. If a blaster is derived from another, I think we should treat it as a standalone blaster.
