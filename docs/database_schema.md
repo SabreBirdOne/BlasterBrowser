@@ -4,7 +4,7 @@ This file serves as documentation on the design of the database. It includes a n
 
 Due to the project using PostgreSQL, which is a relational database, this file contains an Entity-Relationship Diagram and an abstract relational schema, which serves as a starting point in implementing the database.
 
-**Warming up**
+**Background**
 
 Here's a link to a Google Drive document: "A Convenient List for New Nerfers With Too Much Money for Their Own Good", a Hobby Blaster Catalogue.
 https://docs.google.com/document/d/11Hw1tJ7mDTvTfsuYxSW-Jt3kofQ2ssyZX8zoZuN_os8/edit#heading=h.s3sb7j7jz7q6
@@ -18,6 +18,28 @@ And "the terminology used is an analogue in order to represent certain attribute
 Throughout the document, for each category of blasters, there is a table of blaster information, the columns are: a set of images of the blaster, blaster name, designer names, a minimal description of the blaster, "Price Range According to Site Listing(s)", and Site Listing(s).
 
 That's already a great starting point for a database schema.
+
+On to another example.
+
+Here's a link to a Google Drive spreadsheet: "Meaker Blaster Master List"
+https://docs.google.com/spreadsheets/d/1YHi-dMucY6FEKNMeTnOKDIbyf-veNf7oJuvx2uj0X1g/edit#gid=23575684
+
+This spreadsheet, at a glance, resembles a relational database, which is excellent. I'm primarily interested in the Printable Blaster List table. The columns are:
+- creator: designer of blasters
+- blaster: blaster name
+- power source: describes dart launching mech
+- feed: how the blaster feeds darts
+- dart type: half, full, Mega, etc.
+- action: the blaster action to launch darts (semi or full auto, slide prime etc.)
+- flywheels: more specifically type of flywheels
+- pusher: describes how darts are pushed into launching mech
+- format: describes whether blaster is standard format, pistol, front, bullpup etc.
+- license: 3D printing licensing?
+- File/Insturctions cost: I think we should have 2 columns for each cost, even though very regularly the cost is for both files and instructions.
+- Other notes: some more text describing the blaster
+
+This spreadsheet really helps me with organizing database columns for blasters.
+
 
 **Natural description of data**
 
