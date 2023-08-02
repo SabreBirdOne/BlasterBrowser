@@ -65,7 +65,7 @@ The database collects data about many shops:
 The database collects data about blaster listings. 
 - Each listing is uniquely identified by an ID
 - Each listing has a price. Listings with variable prices have a price of -1.
-- Each listing may have a link to the a webpage, and a description. 
+- Each listing may have a name, link to the a webpage, and a description. 
 
 
 **Relationships**
