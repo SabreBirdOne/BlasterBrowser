@@ -1,10 +1,10 @@
-**Overview**
+# Overview
 
 This file serves as documentation on the design of the database. It includes a natural description of the data, written in a certain way to facilitate the database design.
 
 Due to the project using PostgreSQL, which is a relational database, this file contains an Entity-Relationship Diagram and an abstract relational schema, which serves as a starting point in implementing the database.
 
-**Background**
+# Background 
 
 _First example_
 
@@ -42,7 +42,7 @@ This spreadsheet, at a glance, resembles a relational database, which is excelle
 
 This spreadsheet really helps me with organizing database columns for blasters.
 
-**Natural description of data**
+# Natural description of data
 
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
@@ -105,11 +105,12 @@ A blaster listing can have many different blasters (I don't know, maybe a deal?)
 
 A blaster can be designed by many designers, while a designer can design many blasters.
 
-**Entity-Relationship Diagram**
+# Entity-Relationship Diagram
+
 Diagrams are drawn and viewed on this website: https://app.diagrams.net/
 
 
 
-**Schema**
+# Schema
 
 
