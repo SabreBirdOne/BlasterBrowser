@@ -1,4 +1,5 @@
 **Overview**
+
 This file serves as documentation on the design of the database. It includes a natural description of the data, written in a certain way to facilitate the database design.
 
 Due to the project using PostgreSQL, which is a relational database, this file contains an Entity-Relationship Diagram and an abstract relational schema, which serves as a starting point in implementing the database.
