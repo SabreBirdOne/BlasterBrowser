@@ -1,8 +1,10 @@
 # OVERVIEW
-This file serves as documentation on the design of the database. It includes a natural description of the data. Due to the project using PostgreSQL, which is a relational database,
-this file contains an Entity-Relationship Diagram and an abstract relational schema, which serves as a starting point in implementing the database.
+This file serves as documentation on the design of the database. It includes a natural description of the data. 
+
+Due to the project using PostgreSQL, which is a relational database, this file contains an Entity-Relationship Diagram and an abstract relational schema, which serves as a starting point in implementing the database.
 
 **Warming up**
+
 Here's a link to a Google Drive document: "A Convenient List for New Nerfers With Too Much Money for Their Own Good", a Hobby Blaster Catalogue.
 https://docs.google.com/document/d/11Hw1tJ7mDTvTfsuYxSW-Jt3kofQ2ssyZX8zoZuN_os8/edit#heading=h.s3sb7j7jz7q6
 
