@@ -6,6 +6,8 @@ Due to the project using PostgreSQL, which is a relational database, this file c
 
 **Background**
 
+_First example_
+
 Here's a link to a Google Drive document: "A Convenient List for New Nerfers With Too Much Money for Their Own Good", a Hobby Blaster Catalogue.
 https://docs.google.com/document/d/11Hw1tJ7mDTvTfsuYxSW-Jt3kofQ2ssyZX8zoZuN_os8/edit#heading=h.s3sb7j7jz7q6
 
@@ -19,7 +21,7 @@ Throughout the document, for each category of blasters, there is a table of blas
 
 That's already a great starting point for a database schema.
 
-On to another example.
+_Second example_
 
 Here's a link to a Google Drive spreadsheet: "Meaker Blaster Master List"
 https://docs.google.com/spreadsheets/d/1YHi-dMucY6FEKNMeTnOKDIbyf-veNf7oJuvx2uj0X1g/edit#gid=23575684
