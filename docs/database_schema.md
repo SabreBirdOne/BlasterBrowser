@@ -134,7 +134,7 @@ Each Blaster can have additional documentation, which contains:
 
 Diagrams are drawn and viewed on this website: https://app.diagrams.net/
 
- ![ERD](https://github.com/SabreBirdOne/BlasterBrowser/blob/main/docs/ERD.drawio.png)
+ ![ERD](https://github.com/SabreBirdOne/BlasterBrowser/blob/main/docs/ERD.png)
 
 
 
