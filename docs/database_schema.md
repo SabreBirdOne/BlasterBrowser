@@ -48,21 +48,45 @@ This spreadsheet really helps me with organizing database columns for blasters.
 
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
-The Hobby has a lot of designers involved, which is great. 
+**Entities**
+
+The database records blaster designers data.
 - Each designer is uniquely identified by a name. A designer can be an individual or a group.
-- Each designer can be contacted via many links
 
-The BlasterBrowser's database should contain blaster data as the main concern. Blasters have a variety of attributes inherent to the design. 
+The database records designer links.
 
-First, I'd like to state how we can uniquely identify blasters in the database
+The database collects blaster data, the main concern. 
 - Every blaster should be identified by a unique ID in the database.
 - A blaster usually has only one name. But many blasters can also share a name (The Longshot confusion)...
   + If a blaster is derived from another, I think we should treat it as a standalone blaster. 
-- A blaster can be designed by zero, one, or many designers
+- Blaster ID is extremely important because it is used to connect blaster attributes across the entire database.
 
-I made the choice of using an artificial ID in the database because names and designers of blasters may sometimes conflict... The way to ID blasters is extremely important because it is used to connect blaster attributes across the entire database.
+The database collects data about many shops:
+- Each shop has a name that uniquely identifies it.
+- A link to the shop's main page also uniquely identifies it.
+- For the sake of simplicity, if we can buy blasters from an individual hobbyist or designer, we can also consider the person as a shop in the database
 
-Next, here are some things related to the blasters
+The database collects data about blaster listings. 
+- Each listing can contain many blasters
+- Each listing has a price. If the price is variable from a listing, we can find a special number to indicate that.
+- Each listing has a link, which is unique in the database.
+
+**Relationships**
+
+A designer can have 0 to many links. A desginer link must link to at least 1 designer.
+
+A blaster can be designed by 0 to many designers. A designer can design 0 to many blasters
+
+A shop can have have 0 to many listings. 
+A listing can only be from one shop (especially when the listing's link links back to a webpage of the shop)
+
+A blaster listing can have 0 to many different blasters. A blaster can be in many listings.
+
+**Other considerations**
+
+These considerations are nice to be documented, but I haven't found a good way to incorporate them into the schema.
+
+Here are some things related to the blasters
 
 Blaster's launch mechanism:
 - A specific launch mechanism, in a specific blaster or as a standalone part, is uniquely identified by name
@@ -111,23 +135,6 @@ Each Blaster can have additional documentation, which contains:
 - information about licenses
 - link to the license (optional?)
 - an extra description.
-
-The hobby have many shops:
-- Each shop has a name that uniquely identifies it.
-- A link to the shop's main page also uniquely identifies it.
-- For the sake of simplicity, if we can buy blasters from an individual hobbyist or designer, we can also consider the person as a shop in the database
-
-The hobby has blaster listings. 
-- Each listing can contain many blasters
-- Each listing has a price. If the price is variable from a listing, we can find a special number to indicate that.
-- Each listing has a link, which is unique in the database.
-
-A shop can have have many listings. 
-A listing can only be from one shop (especially when the listing's link links back to a webpage of the shop)
-
-A blaster listing can have many different blasters (I don't know, maybe a deal?). Also, it is possible that the same blaster can be in many listings (very commonly so!)
-
-A blaster can be designed by many designers, while a designer can design many blasters.
 
 # Entity-Relationship Diagram
 
