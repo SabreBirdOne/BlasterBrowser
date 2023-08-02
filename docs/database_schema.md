@@ -83,7 +83,7 @@ Some attributes about form factor.
 - A blaster's length (in milimeters) is a worthy attribute, to determine which playstyles it may support.
 - A blaster's ergonomic shape is interesting: pistol, bullpup, regular
 
-Each Blaster can have documenation, which contains:
+Each Blaster can have additional documentation, which contains:
 - information about licenses
 - link to the license (optional?)
 - an extra description.
