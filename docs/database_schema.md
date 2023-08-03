@@ -57,7 +57,9 @@ The database records blaster designers data.
 The database collects blaster data, the main concern. 
 - Every blaster should be identified by a unique ID in the database.
 - A blaster has a name. Not always unique (Longshot confusion)
-- A blaster also has a general category describing launch mechanism: springer, stringer, flywheel, hpa, aeb, etc.
+
+The database records all launch mechanisms commonly seen in the Hobby.
+- Each row has just one type: springer, stringer, flywheel, hpa, aeb, etc.
 
 The database collects data about many shops:
 - Each shop has a name that uniquely identifies it.
@@ -73,9 +75,13 @@ The database collects data about blaster listings.
 
 A blaster can be designed by 0 to many designers. A designer can design 0 to many blasters
 
+A blaster can have 1 to many launch mechanisms. A launch mechanism is used in 0 to many blasters.
+
 A shop can have have 0 to many listings. A listing can only be from one shop.
 
 A blaster listing can have 0 to many different blasters. A blaster can be in many listings.
+
+
 
 **Other considerations**
 
