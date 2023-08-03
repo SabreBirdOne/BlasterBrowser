@@ -77,11 +77,11 @@ The database collects data about many shops:
 - Each shop has a link, and a description
 
 The database collects data about blaster listings. 
-- Each listing is uniquely identified by an ID in the database
-- Each listing has a price. Listings with variable prices have a price of -1.
-- Each listing may have a name, link to the a webpage, and a description. 
+- Each blaster listing is uniquely identified by an ID in the database
+- Each blaster listing has a price. Listings with variable prices have a price of -1.
+- Each blaster listing may have a name, link to the a webpage, and a description. 
 
-Maybes:
+The next set of entities describe blaster parts in the hobby.
 
 The database stores parts information:
 - Each part has a unique id in the database
@@ -113,7 +113,18 @@ The database stores launch_springs information:
 - Each launch spring has a unique id in the database (same id as the one in parts table)
 - Each launch spring has a length (mm), outer diameter (mm), inner diamter (mm), and spring constant (newtons per meter)
 
-launch_spring, barrel, spring_modifier (spacers, caps, and other tuning mods to a spring).
+The database stores barrels information:
+- Each barrel has a unique id in the database (same id as the one in parts table)
+- Each barrel has a length (mm), outer diameter (mm), inner diameter (mm)
+
+The database stores spring_modifiers information:
+- Each spring modifier has a unique id in the database (same id as the one in parts table)
+- Each spring modifier has a type: spacers, caps, etc.
+
+The database collects data about part listings. 
+- Each part listing is uniquely identified by an ID in the database
+- Each part listing has a price. Listings with variable prices have a price of -1.
+- Each part listing may have a name, link to the a webpage, and a description. 
 
 **Relationships**
 
@@ -121,13 +132,26 @@ A blaster can be designed by 0 to many designers. A designer can design 0 to man
 
 A blaster can have 1 to many launch mechanisms. A launch mechanism is used in 0 to many blasters.
 
-A shop can have have 0 to many listings. A listing can only be from one shop.
+A blaster is compatible with 0 to many parts. A part is compatible with 0 to many blasters.
 
-A blaster listing can have 0 to many different blasters. A blaster can be in many listings.
+A shop can have 0 to many blaster listings. A blaster listing can only be from one shop.
 
-Maybes:
+A shop can have 0 to many part listings. A part listing can only be from one shop.
 
+A blaster listing can have 0 to many different blasters. A blaster can be in 0 to many listings.
 
+A part listing can have 0 to many different parts. A part can be in 0 to many part listings.
+
+Parts is a family of blaster parts. All parts have a universal part id across the database, and have a part type inside the family tree below:
+All Parts:
+- Muzzles
+  + SCAR Muzzles
+  + BCAR Muzzles
+  + Tracer Muzzles
+  + Decorative Muzzles
+- Launch springs
+- Barrels
+- Spring modifiers
 
 **Other considerations**
 
