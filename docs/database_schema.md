@@ -56,7 +56,8 @@ The database records blaster designers data.
 
 The database collects blaster data, the main concern. 
 - Every blaster should be identified by a unique ID in the database.
-- A blaster has a name. Not always unique (Longshot confusion) 
+- A blaster has a name. Not always unique (Longshot confusion)
+- A blaster also has a general category describing launch mechanism: springer, stringer, flywheel, hpa, aeb, etc.
 
 The database collects data about many shops:
 - Each shop has a name that uniquely identifies it.
