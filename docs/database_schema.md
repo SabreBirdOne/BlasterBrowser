@@ -48,28 +48,72 @@ This spreadsheet really helps me with organizing database columns for blasters.
 
 A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
+When discussing entities below:
+- Entities are basically the tables in the database
+- Each entity has at least one attribute: columns of the table.
+- Each entity needs to have a key: a set of attributes that uniquely identify a row in the table.
+- Attributes / Columns must be able to characterize a row in the table on their own. To show you what I mean, here's an example:
+  + Should length be an attribute of a spring? Yes. Length is the usual description of a spring.
+  + Should dart velocity effect be an attribute of a spring? Likely yes. What fps a spring can achieve describes that spring.
+  + Should price be an atribute of a spring? Not really. You buy a spring from a shop's listing, and the listing has a price. So the price describes the listing for the spring, not the spring itself.
+
+- If a table can satisfy the above, then it is a good table.
+
 **Entities**
 
 The database records blaster designers data.
-- Each designer is uniquely identified by a name. A designer can be an individual or a group.
+- Each designer is uniquely identified by a name. A designer can be an individual or a group. designer names are unique in the database.
 - Each designer has a link, and a description
 
 The database collects blaster data, the main concern. 
-- Every blaster should be identified by a unique ID in the database.
+- Every blaster is identified by a unique ID in the database.
 - A blaster has a name. Not always unique (Longshot confusion)
 
 The database records all launch mechanisms commonly seen in the Hobby.
-- Each row has just one type: springer, stringer, flywheel, hpa, aeb, etc.
+- Each row has just one unique type in the database: springer, stringer, flywheel, hpa, aeb, etc.
 
 The database collects data about many shops:
-- Each shop has a name that uniquely identifies it.
+- Each shop has a name that uniquely identifies it in the database
 - Each shop has a link, and a description
 
 The database collects data about blaster listings. 
-- Each listing is uniquely identified by an ID
+- Each listing is uniquely identified by an ID in the database
 - Each listing has a price. Listings with variable prices have a price of -1.
 - Each listing may have a name, link to the a webpage, and a description. 
 
+Maybes:
+
+The database stores parts information:
+- Each part has a unique id in the database
+- Each part has a name, and a stock indicator (for computing stock performance)
+- Each part has 4 numbers for mean, sd, max, min of dart velocity effect (fps)
+- Each part has a material: aluminum, brass, anonized, 3d_printed, abs, etc.
+- Each part has a part type, and description
+
+The database stores muzzles information:
+- Each muzzle has a unique part id in the database (same id as the one in parts table)
+- Each muzzle has a length (mm), and attaching diameter (mm) (what is the outer diameter of any barrel that the muzzle can attach to)
+
+The database stores scar_muzzles information:
+- Each scar has a unique part id in the database (same id as the one in parts table)
+- Each scar has a number of strings, and rotation (degrees)
+
+The database stores bcar_muzzles information:
+- Each bcar has a unique part id in the database (same id as the one in parts table)
+- Each bcar has a number of bearings, and rotation (degrees)
+
+The database stores tracer_muzzles information:
+- Each tracer muzzle has a unique part id in the database (same id as the one in parts table)
+- Each tracer muzzle has brightness (lumens)
+
+The database stores decorative_muzzles information:
+- Each decorative_muzzles has a unique part id in the database (same id as the one in parts table)
+
+The database stores launch_springs information:
+- Each launch spring has a unique id in the database (same id as the one in parts table)
+- Each launch spring has a length (mm), outer diameter (mm), inner diamter (mm), and spring constant (newtons per meter)
+
+launch_spring, barrel, spring_modifier (spacers, caps, and other tuning mods to a spring).
 
 **Relationships**
 
@@ -80,6 +124,8 @@ A blaster can have 1 to many launch mechanisms. A launch mechanism is used in 0 
 A shop can have have 0 to many listings. A listing can only be from one shop.
 
 A blaster listing can have 0 to many different blasters. A blaster can be in many listings.
+
+Maybes:
 
 
 
