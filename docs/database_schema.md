@@ -143,6 +143,7 @@ A blaster listing can have 0 to many different blasters. A blaster can be in 0 t
 A part listing can have 0 to many different parts. A part can be in 0 to many part listings.
 
 Parts is a family of blaster parts. All parts have a universal part id across the database, and have a part type inside the family tree below:
+
 All Parts:
 - Muzzles
   + SCAR Muzzles
