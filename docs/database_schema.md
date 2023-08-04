@@ -65,6 +65,9 @@ The database records data about people involved in the Hobby.
 - Each person is uniquely identified by a name. A "person" here can be an individual, a group or a company. Names are unique in the database.
 - Each person has a description
 
+The database records people's contact information.
+- Each contact information entry is uniquely identified by name of the person and link, which together are unique in the database.
+
 The database collects blaster data, the main concern. 
 - Every blaster is identified by a unique ID in the database.
 - A blaster has a name, and a description.
