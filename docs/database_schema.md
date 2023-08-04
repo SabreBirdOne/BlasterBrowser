@@ -61,9 +61,9 @@ When discussing entities below:
 
 **Entities**
 
-The database records blaster designers data.
-- Each designer is uniquely identified by a name. A designer can be an individual or a group. designer names are unique in the database.
-- Each designer has a link, and a description
+The database records data about people involved in the Hobby.
+- Each person is uniquely identified by a name. A "person" here can be an individual, a group or a company. Names are unique in the database.
+- Each person has a description
 
 The database collects blaster data, the main concern. 
 - Every blaster is identified by a unique ID in the database.
@@ -72,21 +72,16 @@ The database collects blaster data, the main concern.
 The database records all launch mechanisms commonly seen in the Hobby.
 - Each row has just one unique type in the database: springer, stringer, flywheel, hpa, aeb, etc.
 
-The database collects data about many shops:
-- Each shop has a name that uniquely identifies it in the database
-- Each shop has a link, and a description
-
-The database collects data about blaster listings. 
-- Each blaster listing is uniquely identified by an ID in the database
-- Each blaster listing has a price. Listings with variable prices have a price of -1.
-- Each blaster listing may have a name, link to the a webpage, and a description. 
+The database collects data about listings. 
+- Each listing is uniquely identified by an ID in the database
+- Each listing has a price. Listings with variable prices have a price of -1.
+- Each listing may have a name, link to the a webpage, and a description. 
 
 The next set of entities describe blaster parts in the hobby.
 
 The database stores parts information:
 - Each part has a unique id in the database
-- Each part has a name, and a stock indicator (for computing stock performance)
-- Each part has 4 numbers for mean, sd, max, min of dart velocity effect (fps)
+- Each part has a name, and a stock indicator
 - Each part has a material: aluminum, brass, anonized, 3d_printed, abs, etc.
 - Each part has a part type, and description
 
@@ -121,26 +116,20 @@ The database stores spring_modifiers information:
 - Each spring modifier has a unique id in the database (same id as the one in parts table)
 - Each spring modifier has a type: spacers, caps, etc.
 
-The database collects data about part listings. 
-- Each part listing is uniquely identified by an ID in the database
-- Each part listing has a price. Listings with variable prices have a price of -1.
-- Each part listing may have a name, link to the a webpage, and a description. 
 
 **Relationships**
 
-A blaster can be designed by 0 to many designers. A designer can design 0 to many blasters
+A blaster can be designed by 0 to many people. A person can design 0 to many blasters
 
 A blaster can have 1 to many launch mechanisms. A launch mechanism is used in 0 to many blasters.
 
 A blaster is compatible with 0 to many parts. A part is compatible with 0 to many blasters.
 
-A shop can have 0 to many blaster listings. A blaster listing can only be from one shop.
+A person can have 0 to many listings. A unique listing can only be from one person.
 
-A shop can have 0 to many part listings. A part listing can only be from one shop.
+A listing can have 0 to many different blasters. A blaster can be in 0 to many listings.
 
-A blaster listing can have 0 to many different blasters. A blaster can be in 0 to many listings.
-
-A part listing can have 0 to many different parts. A part can be in 0 to many part listings.
+A listing can have 0 to many different parts. A part can be in 0 to many listings.
 
 Parts is a family of blaster parts. All parts have a universal part id across the database, and have a part type inside the family tree below:
 
