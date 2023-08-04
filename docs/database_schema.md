@@ -67,10 +67,11 @@ The database records data about people involved in the Hobby.
 
 The database collects blaster data, the main concern. 
 - Every blaster is identified by a unique ID in the database.
-- A blaster has a name. Not always unique (Longshot confusion)
+- A blaster has a name, and a description.
 
 The database records all launch mechanisms commonly seen in the Hobby.
-- Each row has just one unique type in the database: springer, stringer, flywheel, hpa, aeb, etc.
+- Each launch mechanism has a unique type: springer, stringer, flywheel, hpa, aeb, etc. Launch mechanism types are unique in the database
+- Each launch mechanism has a description
 
 The database collects data about listings. 
 - Each listing is uniquely identified by an ID in the database
