@@ -159,7 +159,15 @@ All Parts:
 - Barrels
 - Spring modifiers
 
-**Other considerations**
+# Entity-Relationship Diagram
+
+Diagrams are drawn and viewed on this website: https://app.diagrams.net/
+
+ ![ERD](https://github.com/SabreBirdOne/BlasterBrowser/blob/main/docs/ERD.png)
+
+# Schema
+
+# Other considerations
 
 These considerations are nice to be documented, but I haven't found a good way to incorporate them into the schema.
 
@@ -213,15 +221,6 @@ Each Blaster can have additional documentation, which contains:
 - link to the license (optional?)
 - an extra description.
 
-# Entity-Relationship Diagram
 
-Diagrams are drawn and viewed on this website: https://app.diagrams.net/
-
- ![ERD](https://github.com/SabreBirdOne/BlasterBrowser/blob/main/docs/ERD.png)
-
-
-
-
-# Schema
 
 
