@@ -170,148 +170,102 @@ Diagrams are drawn and viewed on this website: https://app.diagrams.net/
 ENTITIES:
 
 contact_info ( name, link )
-
-key: (name,link)
-
-fd: {}
+- key: (name,link)
+- fd: {}
 
 people ( name, description )
-
-key: name
-
-fd: { name -> description }
+- key: name
+- fd: { name -> description }
 
 listings ( id, listing_person_name, name, price_usd, link, description )
-
-key: id
-
-fd: { id -> listing_person_name, name, price_usd, link, description }
+- key: id
+- fd: { id -> listing_person_name, name, price_usd, link, description }
 
 blasters ( id, name, description )
-
-key: id
-
-fd: { id -> name, description }
+- key: id
+- fd: { id -> name, description }
 
 launch_mechs ( type, description )
-
-key: type
-
-fd: { type -> description }
+- key: type
+- fd: { type -> description }
 
 blaster_build_guides ( build_id, link )
-
-key: (build_id, link)
-
-fd: {}
+- key: (build_id, link)
+- fd: {}
 
 blaster_builds ( build_id, name, description, date_published, mean_dart_velocity_fps, sd_dart_velocity_fps, max_dart_velocity_fps, min_dart_velocity_fps )
-
-key: build_id
-
-fd: { build_id -> name, description, date_published, mean_dart_velocity_fps, sd_dart_velocity_fps, max_dart_velocity_fps, min_dart_velocity_fps }
+- key: build_id
+- fd: { build_id -> name, description, date_published, mean_dart_velocity_fps, sd_dart_velocity_fps, max_dart_velocity_fps, min_dart_velocity_fps }
 
 ENTITIES - PARTS FAMILY:
 
 parts ( part_id, part_type, name, is_stock, material, description )
-
-key: part_id
-
-fd: { part_id -> part_type, name, is_stock, material, description }
+- key: part_id
+- fd: { part_id -> part_type, name, is_stock, material, description }
 
 muzzles ( part_id, attaching_diameter_mm, length_mm )
-
-key: part_id
-
-fd: { part_id -> attaching_diameter_mm, length_mm }
+- key: part_id
+- fd: { part_id -> attaching_diameter_mm, length_mm }
 
 scar_muzzles ( part_id, number_of_strings, rotation_degrees )
-
-key: part_id
-
-fd: { part_id -> number_of_strings, rotation_degrees }
+- key: part_id
+- fd: { part_id -> number_of_strings, rotation_degrees }
 
 bcar_muzzles ( part_id, number_of_bearings, rotation_degrees )
-
-key: part_id
-
-fd: { part_id -> number_of_bearings, rotation_degrees }
+- key: part_id
+- fd: { part_id -> number_of_bearings, rotation_degrees }
 
 tracer_muzzles ( part_id, brightness_lumens )
-
-key: part_id
-
-fd: { part_id -> brightness_lumens }
+- key: part_id
+- fd: { part_id -> brightness_lumens }
 
 decorative_muzzles ( part_id )
-
-key: part_id
-
-fd: {}
+- key: part_id
+- fd: {}
 
 launch_springs ( part_id, length_mm, inner_diameter_mm, outer_diameter, spring_constant_newtons_per_meter )
-
-key: part_id
-
-fd: { part_id -> length_mm, inner_diameter_mm, outer_diameter, spring_constant_newtons_per_meter }
+- key: part_id
+- fd: { part_id -> length_mm, inner_diameter_mm, outer_diameter, spring_constant_newtons_per_meter }
 
 barrels ( part_id, length_mm, inner_diameter_mm, outer_diameter )
-
-key: part_id
-
-fd: { part_id -> length_mm, inner_diameter_mm, outer_diameter }
+- key: part_id
+- fd: { part_id -> length_mm, inner_diameter_mm, outer_diameter }
 
 spring_modifiers ( part_id, spring_modifier_type )
-
-key: part_id
-
-fd: { part_id -> spring_modifier_type }
+- key: part_id
+- fd: { part_id -> spring_modifier_type }
 
 RELATIONSHIPS:
 
 person_has_listing is represented in the listings relation.
 
 person_designs_blaster ( person_name, blaster_id )
-
-key: (person_name, blaster_id)
-
-fd: {}
+- key: (person_name, blaster_id)
+- fd: {}
 
 listing_contains_blaster ( listing_id, blaster_id )
-
-key: (listing_id, blaster_id)
-
-fd: {}
+- key: (listing_id, blaster_id)
+- fd: {}
 
 listing_contains_part ( listing_id, part_id )
-
-key: (listing_id, part_id)
-
-fd: {}
+- key: (listing_id, part_id)
+- fd: {}
 
 blaster_compatible_part ( blaster_id, part_id )
-
-key: (blaster_id, part_id)
-
-fd: {}
+- key: (blaster_id, part_id)
+- fd: {}
 
 blaster_has_launch_mech ( blaster_id, launch_mech_type )
-
-key: (blaster_id, launch_mech_type)
-
-fd: {}
+- key: (blaster_id, launch_mech_type)
+- fd: {}
 
 blaster_involved_in_build ( blaster_id, build_id )
-
-key: (blaster_id, build_id)
-
-fd: {}
+- key: (blaster_id, build_id)
+- fd: {}
 
 part_involved_in_build ( part_id, build_id )
-
-key: (part_id, build_id)
-
-fd: {}
+- key: (part_id, build_id)
+- fd: {}
 
 
 # Other considerations
