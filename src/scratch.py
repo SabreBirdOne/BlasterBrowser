@@ -11,7 +11,10 @@ if __name__ == "__main__":
 	db_filepath = os.path.join(DIR_DATA, db_filename)
 	con = sqlite3.connect(db_filepath)
 
+	schema_definer = DBSchemaDefiner()
+	schema_definer.defineSchema(con)
+
 	con.close()
 
-	schema_definer = DBSchemaDefiner()
+
 	pass

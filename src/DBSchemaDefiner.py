@@ -1,5 +1,13 @@
 """
 This file contains a DataBuilder, used to define the tables in the BlasterBrowsers database.
+
+SQLite3 docs:
+https://www.sqlite.org/datatype3.html
+
+Python SQLite3 docs: 
+https://docs.python.org/3/library/sqlite3.html
+
+
 """
 
 import sqlite3
@@ -72,12 +80,27 @@ class DBSchemaDefiner:
 		try:
 			cur = conn.cursor()
 			
+			
+			exec_strs = [
+				"CREATE TABLE IF NOT EXISTS launch_mechs (type TEXT, description TEXT, PRIMARY KEY (type));",
+				"CREATE TABLE IF NOT EXISTS parts_family_info (part_type TEXT, parent_part_type TEXT, PRIMARY KEY (part_type));"
+			]
+			for exec_str in exec_strs:
+				cur.execute(exec_str)
+
+			
+			for row in self._launch_mechs.items():
+				cur.execute("INSERT INTO launch_mechs VALUES (?,?)", (row[0], row[1]))
+
+			for row in self._parts_family_info.items():
+				cur.execute("INSERT INTO parts_family_info VALUES (?,?)", (row[0], row[1]))
+			
+
 			conn.commit()
 		except Exception as e:
 			print("DBSchemaDefiner.defineSchema(): exception: {}. Rolling back...".format(e))
 			conn.rollback()
 
-		
 		pass
 
 
