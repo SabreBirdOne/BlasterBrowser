@@ -1,6 +1,7 @@
 import sqlite3
 
 from DBSchemaDefiner import *
+from Observers import *
 from PATHS import *
 
 
@@ -13,6 +14,11 @@ if __name__ == "__main__":
 
 	schema_definer = DBSchemaDefiner()
 	schema_definer.defineSchema(con)
+
+	schema_viewer = SchemaViewer()
+	schema_viewer.update(con)
+
+	print(schema_viewer.getDataAsString())
 
 	con.close()
 
