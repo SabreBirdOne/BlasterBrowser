@@ -81,6 +81,14 @@ The database collects data about listings.
 - Each listing has a price. Listings with variable prices have a price of -1.
 - Each listing may have a name, link to the a webpage, and a description. 
 
+The database collects data about blaster builds:
+- Each build has a unique id, unique in the database
+- Each build has a name, date published, and description
+- Each build has 4 stats: max, min, mean, sd of dart velocity (feet per second), published by the build author.
+
+The database collects data about blaster build guides:
+- Each build guide is uniquely identified by a build id and a link, which together are unique in the database.
+
 The next set of entities describe blaster parts in the hobby.
 
 The database stores parts information:
@@ -134,6 +142,10 @@ A person can have 0 to many listings. A unique listing can only be from one pers
 A listing can have 0 to many different blasters. A blaster can be in 0 to many listings.
 
 A listing can have 0 to many different parts. A part can be in 0 to many listings.
+
+A blaster build has at least 1 to many blasters. A blaster can be involved in 0 to many blaster builds.
+
+A blaster build can have 0 to many parts. A part can be involved in 0 to many blaster builds.
 
 Parts is a family of blaster parts. All parts have a universal part id across the database, and have a part type inside the family tree below:
 
