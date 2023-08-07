@@ -97,6 +97,11 @@ The database stores parts information:
 - Each part has a material: aluminum, brass, anonized, 3d_printed, abs, etc.
 - Each part has a part type, and description
 
+The database stores information about the parts family tree.
+- Each part_type is uniquely defined by part_type, unique in the database.
+- Each part_type may have a parent part type, which is also a part type.
+- The top of the family, the "part" part type, has no parent part type.
+
 The database stores muzzles information:
 - Each muzzle has a unique part id in the database (same id as the one in parts table)
 - Each muzzle has a length (mm), and attaching diameter (mm) (what is the outer diameter of any barrel that the muzzle can attach to)
@@ -202,6 +207,10 @@ ENTITIES - PARTS FAMILY:
 parts ( part_id, part_type, name, is_stock, material, description )
 - key: part_id
 - fd: { part_id -> part_type, name, is_stock, material, description }
+
+parts_family_info ( part_type, parent_part_type )
+- key: part_type
+- fd: { part_type -> parent_part_type }
 
 muzzles ( part_id, attaching_diameter_mm, length_mm )
 - key: part_id
