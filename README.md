@@ -12,7 +12,7 @@ In the 2020s, we (the contributors of the project) have seen the rise of hobby-g
 
 Honestly, I (SabreBirdOne) don't know how to handle this too well. 
 
-For end users, you can open a GitHub issue, or contact me via Reddit (u/SabreBirdOne) or GitHub.
+For end users, you can open a GitHub issue, or contact me via Reddit (u/SabreBirdOne) or GitHub. I'm usually active on the r/Nerf subreddit.
 For programmers, I think you can send pull requests and we can review the code changes together?
 
 **TROUBLESHOOTING**
@@ -21,7 +21,7 @@ If there are any bugs or issues encountered, you can open a GitHub issue or cont
 
 **CONTRIBUTORS**
 
-The contributors of BlasterBrowsers on GitHub
+The contributors of BlasterBrowser on GitHub
 
 Special thanks:
 
