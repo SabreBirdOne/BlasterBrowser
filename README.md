@@ -32,3 +32,7 @@ https://docs.google.com/document/d/11Hw1tJ7mDTvTfsuYxSW-Jt3kofQ2ssyZX8zoZuN_os8/
 Authors of Meaker Blaster Master List:
 
 https://docs.google.com/spreadsheets/d/1YHi-dMucY6FEKNMeTnOKDIbyf-veNf7oJuvx2uj0X1g/edit#gid=23575684
+
+Nerf Subreddit: 
+
+https://www.reddit.com/r/Nerf/
