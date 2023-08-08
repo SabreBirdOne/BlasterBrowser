@@ -44,11 +44,12 @@ This spreadsheet, at a glance, resembles a relational database, which is excelle
 
 This spreadsheet really helps me with organizing database columns for blasters.
 
-# Natural description of data
+_Flywheel parts conversation_
 
-A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
+https://www.reddit.com/r/Nerf/comments/15k8so5/blasterbrowser_updated_schema_parts_family/
 
-When discussing entities below:
+_About entities_
+
 - Entities are basically the tables in the database
 - Each entity has at least one attribute: columns of the table.
 - Each entity needs to have a key: a set of attributes that uniquely identify a row in the table.
@@ -57,7 +58,26 @@ When discussing entities below:
   + Should dart velocity effect be an attribute of a spring? Likely yes. What fps a spring can achieve describes that spring.
   + Should price be an atribute of a spring? Not really. You buy a spring from a shop's listing, and the listing has a price. So the price describes the listing for the spring, not the spring itself.
 
-- If a table can satisfy the above, then it is a good table.
+- Entities are the rectangles in the ER diagram. The ellipses are the attributes of an entity. Underlined attributes _together_ defines a key of that entity.
+
+_About relationships_
+
+- Relationships are links between 2 entities in the database, and are vital to connecting the data depending on the domain knowledge.
+- Relationships help defend the normal form of the database, and thus the data integrity.
+- Relationships can be one-to-many, one-to-one, or many-to-many. Each type of relationship is represented differently in the actual table definitions in the code.
+  + "Many" can mean 0, 1 or many, depending on relationship
+  + Relationships can map an entity to another entity of the same type. For example: A person can work for another person
+
+- Relationships are the diamonds in the database, connecting the entities.
+- A line connecting to an entity has a number indicating what type of relationship it is.
+- As an example, if you see a diamond connecting 2 entities A and B:
+  + The line to A with numbers "1..1" means that "each B relates to exactly 1 A"
+  + The line to B with numbers "0..N" means that "each A relates to 0 to many Bs"
+  + As an exercise for reader, what is the type of relationship in the example?
+
+# Natural description of data
+
+A lot of the description below may sound very obvious to us as hobbyists. I'm writing it this way to explicitly make the data modeling clear for development.
 
 **Entities**
 
@@ -81,10 +101,22 @@ The database collects data about listings.
 - Each listing has a price. Listings with variable prices have a price of -1.
 - Each listing may have a name, link to the a webpage, and a description. 
 
+The database collects data about darts:
+- Each dart has a name, which is unique in the database
+- Each dart has a dart_type: short dart, elite dart, rival, mega, mega_xl
+- Each dart has a description
+
+The database collects data about magazines:
+- Each magazine has a name, which is unique in the database
+- Each magazine has a capacity, dart_type (see above), and shape: straight, curved, etc.
+- Each magazine has a description
+
 The database collects data about blaster builds:
 - Each build has a unique id, unique in the database
 - Each build has a name, date published, and description
 - Each build has 4 stats: max, min, mean, sd of dart velocity (feet per second), published by the build author.
+- Each build has a mag_feeding_form: mag in front, mag in grip, bullpup, side, top, top layflat, belt fed, hopper fed, back fed (Example: conquest pro)
+- Each build has an action: pump action, slide prime, bolt action, lever action, back prime (example: nitefinder), semi automatic, fully automatic, etc. (a blaster can be built to have many actions, but each build should usually only have 1 action type.) 
 
 The database collects data about blaster build guides:
 - Each build guide is uniquely identified by a build id and a link, which together are unique in the database.
@@ -133,6 +165,20 @@ The database stores spring_modifiers information:
 - Each spring modifier has a unique id in the database (same id as the one in parts table)
 - Each spring modifier has a type: spacers, caps, etc.
 
+The database stores flywheeler_parts information:
+- Each flywheeler part has a unique id in the database (same id as the one in parts table)
+- Each flywheeler part belongs to a standard: superstock_standard, daybreakoids, hurricanoids, flywheel_the_world, other_standard
+
+The database stores flywheels information:
+- Each flywheel has a unique id in the database (same id as the one in parts table)
+- Each flywheel has a root diameter (mm) and rim outer diameter (mm)
+
+The database stores flywheel_cages information:
+- Each cage has a unique id in the database (same id as the one in parts table)
+- Each cage has a center distance (mm) and flywheel cavity diameter (mm)
+
+The database stores flywheel_motors information:
+- Each motor has a unique id in the database (same id as the one in parts table)
 
 **Relationships**
 
@@ -152,6 +198,10 @@ A blaster build has at least 1 to many blasters. A blaster can be involved in 0 
 
 A blaster build can have 0 to many parts. A part can be involved in 0 to many blaster builds.
 
+A blaster build is compatible with 0 to many specific darts. A specific dart is compatible with 0 to many blaster builds
+
+A blaster build is compatible with 0 to many specific magazines. A specific magazine is compatible with 0 to many blaster builds
+
 Parts is a family of blaster parts. All parts have a universal part id across the database, and have a part type inside the family tree below:
 
 All Parts:
@@ -163,6 +213,10 @@ All Parts:
 - Launch springs
 - Barrels
 - Spring modifiers
+- Flywheeler_parts
+  + Flywheels
+  + Flywheel Cages
+  + Flywheel Motors 
 
 # Entity-Relationship Diagram
 
